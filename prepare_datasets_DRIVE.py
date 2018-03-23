@@ -1,3 +1,6 @@
+# -*- coding:utf-8 -*-  
+
+
 #==========================================================
 #
 #  This prepare the hdf5 datasets of the DRIVE database
@@ -67,6 +70,7 @@ def get_datasets(imgs_dir,groundTruth_dir,borderMasks_dir,train_test="null"):
     assert(np.min(groundTruth)==0 and np.min(border_masks)==0)
     print "ground truth and border masks are correctly withih pixel value range 0-255 (black-white)"
     #reshaping for my standard tensors
+    # ATTENTION !!!! the dim!!!
     imgs = np.transpose(imgs,(0,3,1,2))
     assert(imgs.shape == (Nimgs,channels,height,width))
     groundTruth = np.reshape(groundTruth,(Nimgs,1,height,width))

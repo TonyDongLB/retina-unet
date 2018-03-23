@@ -1,16 +1,16 @@
 [data paths]
-path_local =  ../DRIVE_datasets_training_testing/
-train_imgs_original = DRIVE_dataset_imgs_train.hdf5
-train_groundTruth = DRIVE_dataset_groundTruth_train.hdf5
-train_border_masks = DRIVE_dataset_borderMasks_train.hdf5
-test_imgs_original = DRIVE_dataset_imgs_test.hdf5
-test_groundTruth = DRIVE_dataset_groundTruth_test.hdf5
-test_border_masks = DRIVE_dataset_borderMasks_test.hdf5
+path_local =  ./DL_datasets_training_testing/
+train_imgs_original = DL_dataset_imgs_train.hdf5
+train_groundTruth = DL_dataset_groundTruth_train.hdf5
+train_border_masks = DL_dataset_borderMasks_train.hdf5
+test_imgs_original = DL_dataset_imgs_test.hdf5
+test_groundTruth = DL_dataset_groundTruth_test.hdf5
+test_border_masks = DL_dataset_borderMasks_test.hdf5
 
 
 
 [experiment name]
-name = test1
+name = DL_test_1
 
 
 [data attributes]

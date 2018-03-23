@@ -6,25 +6,25 @@ from help_functions import load_hdf5
 from help_functions import visualize
 from help_functions import group_images
 
-from pre_processing import my_PreProc
+from DL_pre_processing import my_PreProc
 
 
 #To select the same images
 # random.seed(10)
 
 #Load the original data and return the extracted patches for training/testing
-def get_data_training(DRIVE_train_imgs_original,
-                      DRIVE_train_groudTruth,
+def get_data_training(DL_train_imgs_original,
+                      DL_train_groudTruth,
                       patch_height,
                       patch_width,
                       N_subimgs,
                       inside_FOV):
-    train_imgs_original = load_hdf5(DRIVE_train_imgs_original)
-    train_masks = load_hdf5(DRIVE_train_groudTruth) #masks always the same
+    train_imgs_original = load_hdf5(DL_train_imgs_original)
+    train_masks = load_hdf5(DL_train_groudTruth) #masks always the same
     # visualize(group_images(train_imgs_original[0:20,:,:,:],5),'imgs_train')#.show()  #check original imgs train
 
 
-    train_imgs = my_PreProc(train_imgs_original)
+    train_imgs = my_PreProc(data=train_imgs_original, mask=train_masks)
     train_masks = train_masks/255.
 
     train_imgs = train_imgs[:,:,9:574,:]  #cut bottom and top so now it is 565*565
